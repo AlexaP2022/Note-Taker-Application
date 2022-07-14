@@ -12,7 +12,7 @@ routes.get('/notes', (req, res) => {
         res.json(JSON.parse(data))
     })  
 });
-//POST / api / notes - should receive a new note to save on the request.body and add it to db.json, then return a new note to the client.  
+//POST / api / notes - should receive a new note to save on the request.body and add it to db.json, then return a new note to the client.  need to give each new note  a unique ID when it's saved (use uniqid NPM package to do this)
 routes.post('/notes', (req, res) => {
     console.log(req.body);
     console.info(`${req.method} request received to add a new note!`);
@@ -26,10 +26,8 @@ routes.post('/notes', (req, res) => {
         })
         
     })  
-     //need to give each new note  a unique ID when it's saved (use 'uniqid NPM package to do this)
    
 })
-   
 
 //BONUS - add route to DELETE / api/notes/:id should receive a query parameter that contains the id of a note to delete.  To delete a note, you'll need to read all notes from the db.json file, remove th note with the given ID property, and then rewrite notes to the db.json file.
 
